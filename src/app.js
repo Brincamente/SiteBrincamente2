@@ -47,6 +47,55 @@ const renderProducts = () => {
     });
 };
 
+// Toast Notification System
+const showToast = (productName, productImage) => {
+    let toastContainer = document.getElementById('toastContainer');
+    if (!toastContainer) {
+        toastContainer = document.createElement('div');
+        toastContainer.id = 'toastContainer';
+        toastContainer.className = 'toast-container';
+        document.body.appendChild(toastContainer);
+    }
+    
+    const toast = document.createElement('div');
+    toast.className = 'toast-message';
+    toast.innerHTML = `
+        <img src="${productImage}" alt="${productName}" class="toast-img">
+        <div class="toast-content">
+            <span class="toast-title">Adicionado ao carrinho!</span>
+            <span class="toast-text">${productName}</span>
+        </div>
+        <button class="toast-close"><i class="fa-solid fa-xmark"></i></button>
+    `;
+    
+    // Click on toast to open the cart (except on close button)
+    toast.addEventListener('click', (e) => {
+        if (!e.target.closest('.toast-close')) {
+            openCart();
+            toast.remove();
+        }
+    });
+    
+    // Close button event
+    toast.querySelector('.toast-close').addEventListener('click', (e) => {
+        e.stopPropagation();
+        toast.classList.add('toast-fade-out');
+        setTimeout(() => toast.remove(), 300);
+    });
+    
+    toastContainer.appendChild(toast);
+    
+    // Auto-remove after 3.5 seconds
+    setTimeout(() => {
+        if (toast.parentNode) {
+            toast.classList.add('toast-fade-out');
+            setTimeout(() => {
+                if (toast.parentNode) toast.remove();
+            }, 300);
+        }
+    }, 3500);
+};
+
 // Cart Logic
 const addToCart = (productId) => {
     const product = products.find(p => p.id === productId);
@@ -64,7 +113,7 @@ const addToCart = (productId) => {
     }
     
     updateCartUI();
-    openCart();
+    showToast(product.name, product.image);
 };
 
 const removeFromCart = (productId) => {
