@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRINCAMENTE - Brinquedos Pedagógicos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using Fredoka One for headings and Nunito for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+    <!-- Main Header (Fixo) -->
+    <header class="main-header">
+        <!-- Top Contact Bar -->
+        <div class="top-bar">
+            <div class="top-bar-container">
+                <span class="contact-info">
+                    <i class="fa-brands fa-whatsapp"></i> Fale Conosco: (15) 99134-0419
+                </span>
+                <span class="shipping-info">
+                    <i class="fa-solid fa-truck-fast"></i> Entregamos em todo o Brasil
+                </span>
+            </div>
+        </div>
+
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="src/LOGO EMPRESA.png" alt="Brincamente Logo">
+                </div>
+                <div class="nav-actions">
+                    <button id="cartBtn" class="cart-btn">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cartBadge" class="cart-badge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero banner-hero">
+        <img src="src/ABERTURA.jpg"
+            alt="Livre Brincar, Brincar Junto, Aprender Brincando - Brinquedos produzidos artesanalmente com muito carinho!"
+            class="banner-img">
+        <div class="banner-actions">
+            <a href="#produtos" class="btn btn-primary">Ver Catálogo de Brinquedos</a>
+        </div>
+    </section>
+
+    <!-- Promo Gallery Section -->
+    <section class="promo-gallery">
+        <div class="swiper promoSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="src/FOTOS/Anuncio persuasivo.png" alt="Anúncio Persuasivo" class="promo-img">
+                        <div class="slide-overlay">
+                            <h3>Descubra a Magia!</h3>
+                            <p>Brinquedos que transformam o aprendizado em pura diversão.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="src/FOTOS/anuncio informativo.png" alt="Anúncio Informativo" class="promo-img">
+                        <div class="slide-overlay">
+                            <h3>Aprenda Brincando</h3>
+                            <p>Desenvolvimento cognitivo com segurança e alegria.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-content">
+                        <img src="src/FOTOS/persona.png" alt="Nossa Persona" class="promo-img">
+                        <div class="slide-overlay">
+                            <h3>Para Quem Amamos</h3>
+                            <p>Feito para despertar o sorriso em cada criança.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <main id="produtos" class="products-section">
+        <div class="section-header">
+            <h2>Nossos Brinquedos</h2>
+            <div class="wave-decoration"></div>
+        </div>
+        <div id="productsGrid" class="products-grid">
+            <!-- Products will be injected here by app.js -->
+        </div>
+    </main>
+
+    <!-- Fale Conosco Section -->
+    <section id="contato" class="contact-section">
+        <div class="section-header">
+            <h2>Fale Conosco</h2>
+            <div class="wave-decoration"></div>
+        </div>
+        <div class="contact-container">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Config -->
+                <input type="hidden" name="access_key" value="956266b1-9633-4424-bf82-cff5c39d7634">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <input type="hidden" name="subject" value="Nova mensagem de contato - Brincamente">
+
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="Nome" placeholder="Seu nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="Email" placeholder="Seu melhor e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Como podemos ajudar?"
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">
+                    <i class="fa-solid fa-paper-plane"></i> Enviar Mensagem
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button id="closeCart" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Cart items will be injected here -->
+            <div class="empty-cart-msg">Seu carrinho está vazio.</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalValue">R$ 0,00</span>
+            </div>
+            <button id="checkoutBtn" class="btn btn-checkout" disabled>Finalizar Compra <i
+                    class="fa-brands fa-whatsapp"></i></button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="src/LOGO EMPRESA.png" alt="Brincamente Logo">
+            </div>
+            <p>© 2026 Brincamente. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/brincamente.sorocaba/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+    <!-- Contact Success Modal -->
+    <div id="contactSuccessModal" class="custom-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Mensagem Enviada!</h3>
+            <p>Sua dúvida/mensagem foi enviada com sucesso! Retornaremos o seu contato em breve por e-mail.</p>
+            <button id="closeModalBtn" class="btn btn-primary" style="margin-top: 15px;">Ok, entendi!</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="src/products.js"></script>
+    <script src="src/app.js"></script>
+</body>
+
+</html>
