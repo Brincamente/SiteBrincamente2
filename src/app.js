@@ -139,6 +139,9 @@ const updateCartUI = () => {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     cartBadge.innerText = totalItems;
     
+    // Toggle body class for active cart FAB and toast positioning
+    document.body.classList.toggle('cart-active', cart.length > 0);
+    
     // Update Total
     const totalValue = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     cartTotalValue.innerText = formatPrice(totalValue);
